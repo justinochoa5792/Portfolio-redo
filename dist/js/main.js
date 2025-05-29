@@ -3,12 +3,6 @@ const menu = document.querySelector(".menu");
 const menuNav = document.querySelector(".menu-nav");
 const menuBranding = document.querySelector(".menu-branding");
 const navItems = document.querySelectorAll(".nav-item");
-const currentYear = new Date().getFullYear();
-const copywriteYear = document.getElementById("current-year");
-
-if (copywriteYear) {
-  copywriteYear.textContent = currentYear;
-}
 
 let showMenu = false;
 
