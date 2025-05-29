@@ -3,6 +3,12 @@ const menu = document.querySelector(".menu");
 const menuNav = document.querySelector(".menu-nav");
 const menuBranding = document.querySelector(".menu-branding");
 const navItems = document.querySelectorAll(".nav-item");
+const currentYear = new Date().getFullYear();
+const copywriteYear = document.getElementById("current-year");
+
+if (copywriteYear) {
+  copywriteYear.textContent = currentYear;
+}
 
 let showMenu = false;
 
@@ -76,8 +82,10 @@ document.addEventListener("DOMContentLoaded", init);
 
 function init() {
   const txtElement = document.querySelector(".txt-type");
-  const words = JSON.parse(txtElement.getAttribute("data-words"));
-  const wait = txtElement.getAttribute("data-wait");
 
-  new TypeWriter(txtElement, words, wait);
+  if (txtElement) {
+    const words = JSON.parse(txtElement.getAttribute("data-words"));
+    const wait = txtElement.getAttribute("data-wait");
+    new TypeWriter(txtElement, words, wait);
+  }
 }
